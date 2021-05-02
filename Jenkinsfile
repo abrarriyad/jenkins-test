@@ -17,5 +17,11 @@ pipeline {
                 git url: "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
             }
         }
+
+        stage("Run Ansible Playbook") {
+            stpes {
+                ansiblePlaybook colorized: true, installation: 'Ansible', inventory: 'inventory', playbook: 'ansible.yml',tags: "" , skippedTags: "", extras: "--extra-vars ' hst=targetHost "
+            }
+        }
     }
 }

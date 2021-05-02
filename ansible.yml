@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: copy index file
+      copy:
+        src: index.html
+        dest: /home/rashid/index.html
+        owner: root
+        group: root
+        mode: 0644
