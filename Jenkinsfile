@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-                git url: ${env.gitlabServerConfigUrl}
+                git url: "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
             }
         }
     }
