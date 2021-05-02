@@ -20,7 +20,7 @@ pipeline {
 
         stage("Run Ansible Playbook") {
             steps {
-                ansiblePlaybook colorized: true, installation: 'Ansible', inventory: 'inventory', playbook: 'ansible.yml',tags: "" , skippedTags: ""
+                ansiblePlaybook colorized: true, installation: 'Ansible', inventory: 'inventory', playbook: 'ansible.yml',tags: "" , skippedTags: "",disableHostKeyChecking: true,
             }
         }
     }
