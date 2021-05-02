@@ -8,8 +8,7 @@ pipeline {
         string(defaultValue: GIT_REPO_NAME, description: '', name: 'gitRepoName', trim: true);
     }
     environment {
-       
-        gitlabServerConfigUrl = "ssh://git@github.com:abrarriyad:221/${GIT_REPO_NAME}.git"
+        gitlabServerConfigUrl = "https://github.com/abrarriyad//${GIT_REPO_NAME}.git"
     }
     stages {
         stage("Checkout") {
