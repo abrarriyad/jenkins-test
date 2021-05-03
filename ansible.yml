@@ -72,6 +72,6 @@
       command: mv ~/docker-compose /usr/local/bin/docker-compose
       when: docker_compose.stat.exists
 
-     name: run docker-compose.yml
+    - name: run docker-compose.yml
       docker_compose:
-        project_src: /home/rashid/demo/  
+        project_src: /home/rashid/demo/
