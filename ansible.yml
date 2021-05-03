@@ -12,9 +12,9 @@
         owner: root
         group: root
         mode: 0777
-        loop:
-          - index.html
-          - docker-compose.yml
+      loop:
+        - index.html
+        - docker-compose.yml
 
     - name: Update apt cache
       apt: update_cache=yes cache_valid_time=3600
