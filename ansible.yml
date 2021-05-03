@@ -88,4 +88,4 @@
 
     - name: run docker-compose.yml
       docker_compose:
-        project_src: /home/rashid/demo
+        project_src: ./
