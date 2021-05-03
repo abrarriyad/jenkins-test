@@ -9,7 +9,7 @@ pipeline {
     }
     environment {
         githubRepoUrl = "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
-        // ansiblePlaybookPath = "/var/lib/jenkins/workspace/jenkins_test"
+        ansiblePlaybookPath = "/var/lib/jenkins/workspace/jenkins_test"
     }
     stages {
         stage("Checkout") {
@@ -20,10 +20,10 @@ pipeline {
 
         stage("Run Ansible Playbook") {
             steps {
-             ansiblePlaybook credentialsId: '33ea877e-dda3-4d92-b3d8-c53dcedfedaf', 
-             disableHostKeyChecking: true, installation: 'ansible', 
-             inventory: '/home/riyad/projects/courses/jenkins/inventory', 
-             playbook: '/home/riyad/projects/courses/jenkins/ansible.yml'
+              ansiblePlaybook credentialsId: '33ea877e-dda3-4d92-b3d8-c53dcedfedaf', 
+              disableHostKeyChecking: true, installation: 'ansible', 
+              inventory: '${ansiblePlaybookPath}/inventory', 
+              playbook: '${ansiblePlaybookPath}/ansible.yml'
             }
         }
     }
