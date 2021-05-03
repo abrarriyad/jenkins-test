@@ -20,8 +20,10 @@ pipeline {
 
         stage("Run Ansible Playbook") {
             steps {
-                ansiblePlaybook credentialsId: '33ea877e-dda3-4d92-b3d8-c53dcedfedaf' installation: 'ansible' colorized: true,inventory: '${ansiblePlaybookPath}/inventory',
-                playbook: '${ansiblePlaybookPath}/ansible.yml',tags: "" , skippedTags: "",disableHostKeyChecking: true
+              ansiblePlaybook credentialsId: '33ea877e-dda3-4d92-b3d8-c53dcedfedaf', 
+              disableHostKeyChecking: true, installation: 'ansible', 
+              inventory: '/var/lib/jenkins/workspace/jenkins_test/inventory', 
+              playbook: '/var/lib/jenkins/workspace/jenkins_test/ansible.yml'
             }
         }
     }
