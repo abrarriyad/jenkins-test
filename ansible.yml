@@ -5,13 +5,16 @@
     docker_compose_version: "1.27.4"
 
   tasks:
-    - name: copy index file
+    - name: copy files
       copy:
-        src: index.html
-        dest: /home/rashid/demo/index.html
+        src: { { items } }
+        dest: /home/rashid/demo
         owner: root
         group: root
         mode: 0777
+        loop:
+          - index.html
+          - docker-compose.yml
 
     - name: Update apt cache
       apt: update_cache=yes cache_valid_time=3600
@@ -85,4 +88,4 @@
 
     - name: run docker-compose.yml
       docker_compose:
-        project_src: /home/rashid/demo/
+        project_src: /home/rashid/demo
