@@ -9,4 +9,4 @@
         dest: /home/rashid/index.html
         owner: root
         group: root
-        mode: 0644
+        mode: 0777

@@ -8,8 +8,8 @@ pipeline {
         string(defaultValue: GIT_REPO_NAME, description: '', name: 'gitRepoName', trim: true);
     }
     environment {
-        gitlabServerConfigUrl = "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
-        // gitlabServerConfigUrl = "https://github.com/abrarriyad/jenkins-test.git"
+        githubRepoUrl = "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
+        ansiblePlaybookPath = "/var/lib/jenkins/workspace/jenkins_test"
     }
     stages {
         stage("Checkout") {
@@ -20,8 +20,8 @@ pipeline {
 
         stage("Run Ansible Playbook") {
             steps {
-                ansiblePlaybook colorized: true, installation: 'Ansible', inventory: '/home/riyad/projects/courses/jenkins/inventory',
-                playbook: '/home/riyad/projects/courses/jenkins/ansible.yml',tags: "" , skippedTags: "",disableHostKeyChecking: true
+                ansiblePlaybook colorized: true, installation: 'Ansible', inventory: '${ansiblePlaybookPath}/inventory',
+                playbook: '${ansiblePlaybookPath}/ansible.yml',tags: "" , skippedTags: "",disableHostKeyChecking: true
             }
         }
     }
