@@ -9,7 +9,7 @@ pipeline {
     }
     environment {
         githubRepoUrl = "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
-        ansiblePlaybookPath = "/var/lib/jenkins/workspace/jenkins_test"
+        // ansiblePlaybookPath = "/var/lib/jenkins/workspace/jenkins_test"
     }
     stages {
         stage("Checkout") {
