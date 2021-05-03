@@ -7,7 +7,7 @@
   tasks:
     - name: copy files
       copy:
-        src: { { items } }
+        src: "{{items}}"
         dest: /home/rashid/demo
         owner: root
         group: root
