@@ -88,4 +88,4 @@
 
     - name: run docker-compose.yml
       docker_compose:
-        project_src: ./
+        project_src: /home/riyad/projects/courses/jenkins
