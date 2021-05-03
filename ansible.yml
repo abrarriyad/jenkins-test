@@ -12,7 +12,7 @@
         owner: root
         group: root
         mode: 0777
-      loop:
+      with_items:
         - index.html
         - docker-compose.yml
 
