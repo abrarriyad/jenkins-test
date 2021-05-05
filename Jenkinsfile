@@ -17,7 +17,7 @@ pipeline {
                 git url: "https://github.com/abrarriyad/${GIT_REPO_NAME}.git"
             }
         }
-
+        
         stage("Run Ansible Playbook") {
             steps {
               ansiblePlaybook credentialsId: '33ea877e-dda3-4d92-b3d8-c53dcedfedaf', 
