@@ -3,10 +3,7 @@
   become: true
 
   roles:
-    - {
-        role: roles/docker/install-docker,
-        when: setup_docker_ecosystem == 'true' or setup_docker_ecosystem == true,
-      }
+    - roles/docker/install-docker
 
   tasks:
     - name: copy files
